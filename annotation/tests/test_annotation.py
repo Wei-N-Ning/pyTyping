@@ -1,7 +1,12 @@
 from annotation import primitives
+from annotation import classes
+from annotation import functions
 import unittest
 
 
 class TestAnnotation(unittest.TestCase):
-    def test_(self):
-        pass
+    def test_classes(self):
+        my_obj = classes.MyClass()
+
+    def test_functions(self):
+        self.assertFalse(functions.send_email([''], '', [], []))
