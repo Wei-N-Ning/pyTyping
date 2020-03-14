@@ -11,3 +11,6 @@ class TestAnnotation(unittest.TestCase):
 
     def test_functions(self):
         self.assertFalse(functions.send_email([''], '', [], []))
+
+    def test_containers(self):
+        containers.demo()
