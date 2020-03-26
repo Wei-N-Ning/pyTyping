@@ -1,4 +1,4 @@
-from typing import Callable, Iterator, Union, Optional, List
+from typing import Iterator, Union, Optional, List, TypeVar, Callable, Iterable
 
 
 # This is how you annotate a function definition
@@ -18,6 +18,17 @@ def f(num1: int, my_float: float = 3.5) -> float:
 
 # This is how you annotate a callable (function) value
 x: Callable[[int, float], float] = f
+
+# see this example also:
+T_ = TypeVar('T_')
+R_ = TypeVar('R_')
+Value = Optional[T_]
+
+
+# how to define callable's type hint:
+# https://stackoverflow.com/questions/37835179/how-can-i-specify-the-function-type-in-my-type-hints
+def maybe(x: Value, f: Callable[[Value], R_], defa: R_) -> R_:
+    return defa if x is None else f(x)
 
 
 # A generator function that yields ints is secretly just a function that

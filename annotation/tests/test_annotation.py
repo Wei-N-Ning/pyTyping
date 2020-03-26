@@ -3,6 +3,7 @@ from annotation import classes
 from annotation import functions
 from annotation import containers
 from annotation import aliases
+from annotation import immutable
 
 import unittest
 
@@ -16,3 +17,7 @@ class TestAnnotation(unittest.TestCase):
 
     def test_containers(self):
         containers.demo()
+
+    def test_immutable(self):
+        ct = immutable.Contract('doom', 'e1m1')
+        self.assertEqual('doom at e1m1', ct())
