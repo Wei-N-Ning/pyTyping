@@ -25,6 +25,8 @@ class Node(NamedTuple):
 class TestNode(unittest.TestCase):
     def test_default_value(self):
         self.assertEqual(1, Node().count)
+        self.assertEqual(None, Node())
+        self.assertEqual(10, Node(10).v)
 
 if __name__ == '__main__':
     unittest.main()
